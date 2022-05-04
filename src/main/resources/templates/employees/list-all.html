@@ -53,7 +53,12 @@
 				
 			</tr>
 		</tbody>	
-	</table>	
+	</table>
+	
+	<!-- Add a logout button -->		
+		<form th:action="@{/logout}" method="post">
+		     <input type="submit" value="Log out" class="btn btn-warning btn-sm mb-3"/>
+		 </form>
 	</div>
 </body>
 </html>

@@ -28,14 +28,16 @@ public class CrudSecurityConfig extends WebSecurityConfigurerAdapter {
 		
 		http.authorizeRequests()
        // .anyRequest().authenticated()
-		.antMatchers("/").hasRole("EMPLOYEE")
+		.antMatchers("/**").hasRole("EMPLOYEE")
         .and()
         .formLogin()
         .loginPage("/showMyLoginPage")
         .loginProcessingUrl("/validateUser")
         .permitAll()
         .and()
-        .logout().permitAll()
+        .logout()
+        .logoutSuccessUrl("/")
+        .permitAll()
         .and()
         .exceptionHandling()
         .accessDeniedPage("/access-denied");
