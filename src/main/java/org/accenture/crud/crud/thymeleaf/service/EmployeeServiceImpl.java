@@ -53,8 +53,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Override
 	@Transactional
-	public void saveEmployee(Employee theEmployee) {
-		employeeRepository.save(theEmployee);
+	public Employee saveEmployee(Employee theEmployee) {
+		return employeeRepository.save(theEmployee);
 	}
 
 	@Override
